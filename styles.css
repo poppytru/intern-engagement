@@ -1,0 +1,300 @@
+/* Amazon Brand Colors */
+:root {
+    --squid-ink: #161D26;
+    --smile-orange: #FF6200;
+    --white: #FFFFFF;
+    --off-white: #F5F3EF;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--squid-ink);
+    background-color: var(--off-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1 {
+    font-family: 'Amazon Ember Display', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    text-transform: none;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Amazon Ember Display', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: var(--squid-ink);
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--squid-ink);
+}
+
+/* Header */
+header {
+    background-color: var(--squid-ink);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--white);
+}
+
+/* Main Content */
+main {
+    padding: 60px 20px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+.section-intro {
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: var(--squid-ink);
+    max-width: 800px;
+}
+
+/* Events Section */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.event-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(22, 29, 38, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(22, 29, 38, 0.15);
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 20px;
+}
+
+.event-date {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--smile-orange);
+    margin-bottom: 8px;
+}
+
+.event-location {
+    font-size: 16px;
+    color: var(--squid-ink);
+}
+
+/* Engagements Section */
+.engagements-section {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.engagement-card {
+    background: var(--off-white);
+    border: 2px solid var(--smile-orange);
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.engagement-card.locked {
+    border-color: #ccc;
+    opacity: 0.6;
+}
+
+.engagement-card.unlocked {
+    border-color: var(--smile-orange);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.engagement-card.unlocked:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 98, 0, 0.2);
+}
+
+.lock-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.unlock-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.engagement-btn {
+    background-color: var(--smile-orange);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.engagement-btn:hover:not(:disabled) {
+    background-color: #e55800;
+}
+
+.engagement-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Prizes Section */
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.tier-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(22, 29, 38, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--smile-orange);
+}
+
+.tier-1::before {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.tier-2::before {
+    background: linear-gradient(90deg, #C0C0C0, #808080);
+}
+
+.tier-3::before {
+    background: linear-gradient(90deg, #CD7F32, #8B4513);
+}
+
+.tier-badge {
+    display: inline-block;
+    background-color: var(--smile-orange);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.prize-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prize-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--off-white);
+    font-size: 18px;
+}
+
+.prize-list li:last-child {
+    border-bottom: none;
+}
+
+.prize-list li::before {
+    content: '✓ ';
+    color: var(--smile-orange);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--squid-ink);
+    color: var(--white);
+    padding: 32px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .events-grid,
+    .engagements-grid,
+    .tiers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 40px 20px;
+    }
+}
