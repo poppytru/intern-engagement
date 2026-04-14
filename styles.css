@@ -1,300 +1,329 @@
-/* Amazon Brand Colors */
+/* ===== Amazon Brand Tokens ===== */
 :root {
     --squid-ink: #161D26;
     --smile-orange: #FF6200;
     --white: #FFFFFF;
     --off-white: #F5F3EF;
+    --tier1: #FF6200;
+    --tier2: #232F3E;
+    --tier3: #8B6914;
 }
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== Reset ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: 'Amazon Ember', 'Segoe UI', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--squid-ink);
-    background-color: var(--off-white);
+    background: var(--off-white);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* Typography */
-h1 {
-    font-family: 'Amazon Ember Display', Arial, sans-serif;
-    font-weight: bold;
-    font-size: 48px;
-    text-transform: none;
-    margin-bottom: 20px;
-}
+a { color: var(--smile-orange); text-decoration: underline; }
+a:hover { text-decoration: none; }
 
-h2 {
-    font-family: 'Amazon Ember Display', Arial, sans-serif;
-    font-weight: normal;
-    font-size: 36px;
-    margin-bottom: 24px;
-    color: var(--squid-ink);
-}
+/* ===== Typography ===== */
+h1 { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
+h2 { font-size: 36px; font-weight: 400; margin-bottom: 24px; color: var(--squid-ink); }
+h3 { font-size: 22px; margin-bottom: 12px; }
 
-h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: var(--squid-ink);
-}
+.section-intro { font-size: 18px; margin-bottom: 32px; max-width: 860px; }
 
-/* Header */
+/* ===== Header ===== */
 header {
-    background-color: var(--squid-ink);
+    background: var(--squid-ink);
     color: var(--white);
-    padding: 40px 0;
+    padding: 48px 0 40px;
     text-align: center;
 }
+.header-content { display: flex; flex-direction: column; align-items: center; }
+.smile-logo { margin-bottom: 16px; }
+.header-subtitle { font-size: 20px; opacity: .85; }
 
-header .logo {
-    width: 120px;
-    margin-bottom: 20px;
-}
+/* ===== Main ===== */
+main { padding: 60px 24px; }
+section { margin-bottom: 80px; }
 
-header h1 {
+/* ===== Events Section ===== */
+.quarter-events { margin-bottom: 28px; }
+.quarter-label { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.quarter-tag {
+    display: inline-block;
+    background: var(--smile-orange);
     color: var(--white);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
 }
-
-/* Main Content */
-main {
-    padding: 60px 20px;
-}
-
-section {
-    margin-bottom: 80px;
-}
-
-.section-intro {
-    font-size: 18px;
-    margin-bottom: 32px;
-    color: var(--squid-ink);
-    max-width: 800px;
-}
-
-/* Events Section */
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-}
-
-.event-card {
+.city-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
     background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(22, 29, 38, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
 }
 
-.event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(22, 29, 38, 0.15);
+.events-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
 }
-
-.event-image {
+.gallery-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
-.event-details {
-    padding: 20px;
-}
-
-.event-date {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--smile-orange);
-    margin-bottom: 8px;
-}
-
-.event-location {
-    font-size: 16px;
-    color: var(--squid-ink);
-}
-
-/* Engagements Section */
+/* ===== Engagements Section ===== */
 .engagements-section {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 8px;
+    background: var(--white);
+    padding: 48px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(22,29,38,.08);
 }
 
-.engagements-grid {
+.quarter-block { margin-bottom: 48px; }
+.quarter-block:last-child { margin-bottom: 0; }
+.quarter-header { margin-bottom: 20px; }
+.quarter-header h3 { display: flex; align-items: center; gap: 12px; }
+.winners-note { font-size: 14px; color: #666; margin-top: 4px; }
+
+.challenges-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
-.engagement-card {
+.challenge-card {
     background: var(--off-white);
-    border: 2px solid var(--smile-orange);
-    border-radius: 8px;
-    padding: 32px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 24px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all .25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
+.challenge-card.open { border-color: var(--smile-orange); }
+.challenge-card.closed-challenge { border-color: #999; opacity: .55; }
 
-.engagement-card.locked {
-    border-color: #ccc;
-    opacity: 0.6;
-}
+.challenge-day { font-weight: 700; font-size: 16px; }
+.challenge-tier { font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 20px; color: var(--white); }
+.tier-1-badge { background: var(--tier1); }
+.tier-2-badge { background: var(--tier2); }
+.tier-3-badge { background: var(--tier3); }
 
-.engagement-card.unlocked {
-    border-color: var(--smile-orange);
-    opacity: 1;
-    cursor: pointer;
-}
+.challenge-status { font-size: 32px; margin: 4px 0; }
+.status-text { display: block; font-size: 13px; color: #888; }
 
-.engagement-card.unlocked:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(255, 98, 0, 0.2);
-}
+.challenge-desc { font-size: 14px; color: #555; }
 
-.lock-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
-}
-
-.unlock-date {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 16px;
-}
-
-.engagement-btn {
-    background-color: var(--smile-orange);
-    color: var(--white);
-    border: none;
-    padding: 12px 24px;
+.challenge-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 24px;
+    border-radius: 6px;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: none;
+    transition: background .2s;
+}
+.challenge-btn.disabled {
+    background: #ccc;
+    color: #888;
+    pointer-events: none;
+}
+.challenge-btn.active {
+    background: var(--smile-orange);
+    color: var(--white);
+}
+.challenge-btn.active:hover { background: #e55800; }
+.challenge-btn.closed-btn {
+    background: #999;
+    color: var(--white);
+    pointer-events: none;
 }
 
-.engagement-btn:hover:not(:disabled) {
-    background-color: #e55800;
+/* ===== Prizes Section ===== */
+.prize-note {
+    background: #FFF3E0;
+    border-left: 4px solid var(--smile-orange);
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    max-width: 860px;
 }
 
-.engagement-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-/* Prizes Section */
 .tiers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
 }
 
 .tier-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 32px;
-    box-shadow: 0 2px 8px rgba(22, 29, 38, 0.1);
+    box-shadow: 0 2px 10px rgba(22,29,38,.08);
     position: relative;
     overflow: hidden;
 }
-
 .tier-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 6px;
-    background: var(--smile-orange);
 }
-
-.tier-1::before {
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-}
-
-.tier-2::before {
-    background: linear-gradient(90deg, #C0C0C0, #808080);
-}
-
-.tier-3::before {
-    background: linear-gradient(90deg, #CD7F32, #8B4513);
-}
+.tier-1::before { background: var(--tier1); }
+.tier-2::before { background: var(--tier2); }
+.tier-3::before { background: var(--tier3); }
 
 .tier-badge {
     display: inline-block;
-    background-color: var(--smile-orange);
     color: var(--white);
-    padding: 8px 16px;
+    padding: 6px 16px;
     border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.prize-list {
-    list-style: none;
-    padding: 0;
-}
+.tier-day { font-size: 14px; color: #666; margin-bottom: 16px; }
 
+.prize-list { list-style: none; padding: 0; }
 .prize-list li {
-    padding: 12px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--off-white);
     font-size: 18px;
 }
+.prize-list li:last-child { border-bottom: none; }
+.prize-list li::before { content: '✓ '; color: var(--smile-orange); font-weight: 700; margin-right: 8px; }
 
-.prize-list li:last-child {
-    border-bottom: none;
-}
-
-.prize-list li::before {
-    content: '✓ ';
+.pick-one {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--smile-orange);
-    font-weight: bold;
-    margin-right: 8px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
 }
 
-/* Footer */
+/* ===== Crossword Modal ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(22,29,38,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--squid-ink);
+    line-height: 1;
+}
+.modal-subtitle { margin-bottom: 24px; font-size: 16px; color: #555; }
+
+.crossword-wrapper {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.crossword-grid {
+    display: inline-grid;
+    gap: 0;
+    border: 2px solid var(--squid-ink);
+    flex-shrink: 0;
+}
+.crossword-grid .cell {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.crossword-grid .cell.black { background: var(--squid-ink); }
+.crossword-grid .cell .cell-number {
+    position: absolute;
+    top: 1px; left: 2px;
+    font-size: 9px;
+    font-weight: 400;
+    color: #555;
+}
+.crossword-grid .cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: transparent;
+    outline: none;
+}
+.crossword-grid .cell input:focus {
+    background: #E3F2FD;
+}
+
+.clues-panel { flex: 1; min-width: 240px; }
+.clues-panel h4 { font-size: 18px; margin-bottom: 8px; color: var(--squid-ink); }
+.clues-panel ol { padding-left: 20px; margin-bottom: 20px; }
+.clues-panel li { font-size: 14px; margin-bottom: 6px; }
+
+/* ===== Footer ===== */
 footer {
-    background-color: var(--squid-ink);
+    background: var(--squid-ink);
     color: var(--white);
     padding: 32px 0;
     text-align: center;
 }
+footer p { font-size: 14px; }
 
-footer p {
-    font-size: 14px;
-}
-
-/* Responsive Design */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-    
-    h2 {
-        font-size: 28px;
-    }
-    
-    .events-grid,
-    .engagements-grid,
-    .tiers-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    main {
-        padding: 40px 20px;
-    }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    .engagements-section { padding: 32px 20px; }
+    .challenges-row, .tiers-grid, .events-gallery { grid-template-columns: 1fr; }
+    .modal { padding: 24px; }
+    .crossword-wrapper { flex-direction: column; }
 }
