@@ -231,37 +231,8 @@ section { margin-bottom: 80px; }
 
 .tiers-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 28px;
-}
-
-.tier-card.tier-2-3::before {
-    background: linear-gradient(90deg, var(--tier2), var(--tier3));
-}
-
-.tier-badges-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-.tier-plus {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--smile-orange);
-}
-
-.dual-tier-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 8px;
-}
-.dual-tier-col h4 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--squid-ink);
 }
 
 .tier-card {
@@ -335,7 +306,6 @@ footer p { font-size: 14px; }
     .events-section,
     .engagements-section { padding: 32px 20px; }
     .challenges-row, .tiers-grid, .events-gallery { grid-template-columns: 1fr; }
-    .dual-tier-columns { grid-template-columns: 1fr; }
     .modal { padding: 24px; }
     .crossword-wrapper { flex-direction: column; }
     .chip { font-size: 16px; padding: 10px 18px; }
