@@ -89,7 +89,7 @@ section { margin-bottom: 80px; }
 
 .events-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 40px;
 }
@@ -218,7 +218,7 @@ section { margin-bottom: 80px; }
     pointer-events: none;
 }
 
-/* ===== Prizes Section ===== */
+/* ===== Prize Stickers ===== */
 .prize-note {
     background: #FFF3E0;
     border-left: 4px solid var(--smile-orange);
@@ -229,73 +229,39 @@ section { margin-bottom: 80px; }
     max-width: 860px;
 }
 
-.tiers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
+.prize-stickers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 20px 0;
 }
-
-.tier-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 2px 12px rgba(22,29,38,.08);
-    position: relative;
-    overflow: hidden;
+.prize-sticker {
+    transition: transform .3s ease;
 }
-.tier-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
+.prize-sticker img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.15));
 }
-.tier-1::before { background: var(--tier1); }
-.tier-2::before { background: var(--tier2); }
-.tier-3::before { background: var(--tier3); }
-
-.tier-badge {
-    display: inline-block;
-    color: var(--white);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.tier-day { font-size: 14px; color: #666; margin-bottom: 16px; }
-
-.prize-list { list-style: none; padding: 0; }
-.prize-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--off-white);
-    font-size: 18px;
-}
-.prize-list li:last-child { border-bottom: none; }
-.prize-list li::before { content: '✓ '; color: var(--smile-orange); font-weight: 700; margin-right: 8px; }
-
-.pick-one {
-    margin-top: 16px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--smile-orange);
-    text-transform: uppercase;
-    letter-spacing: .5px;
+.prize-sticker:hover {
+    transform: scale(1.08) rotate(0deg) !important;
 }
 
 /* ===== Footer ===== */
 footer {
-    background: var(--squid-ink);
-    color: var(--white);
-    padding: 32px 0;
-    text-align: center;
     position: relative;
     z-index: 1;
 }
-footer p { font-size: 14px; }
+.footer-banner {
+    background: var(--squid-ink);
+    padding: 40px 0;
+    text-align: center;
+}
 .footer-smile {
-    width: 80px;
-    margin-bottom: 12px;
+    width: 120px;
+    height: auto;
     filter: brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(2000%) hue-rotate(10deg) brightness(100%) contrast(105%);
 }
 

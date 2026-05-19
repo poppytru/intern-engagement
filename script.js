@@ -6,7 +6,6 @@ function updateChallenges() {
         const close  = new Date(card.dataset.close);
         const link   = card.dataset.link || null;
         const link2  = card.dataset.link2 || null;
-        const isCrossword = card.dataset.crossword === 'true';
         const isHackathon = card.dataset.hackathon === 'true';
         const lockIcon  = card.querySelector('.lock-icon');
         const statusTxt = card.querySelector('.status-text');
@@ -26,20 +25,14 @@ function updateChallenges() {
             btn.removeAttribute('href');
             btn.setAttribute('aria-disabled', 'true');
             btn.onclick = null;
-        } else if (now >= unlock && now < close) {
+        } else if (now >= unlock && now <= close) {
             // Open
             card.classList.add('open');
             card.classList.remove('closed-challenge');
             lockIcon.textContent = '🎮';
             statusTxt.textContent = 'Open now';
 
-            if (isCrossword) {
-                btn.textContent = 'Play crossword';
-                btn.className = 'challenge-btn active';
-                btn.href = 'crossword.html';
-                btn.removeAttribute('aria-disabled');
-                btn.onclick = null;
-            } else if (isHackathon && link) {
+            if (isHackathon && link) {
                 btn.textContent = 'Go to Hackathon';
                 btn.className = 'challenge-btn active';
                 btn.href = link;
@@ -79,8 +72,8 @@ function updateChallenges() {
             card.classList.remove('open');
             card.classList.add('closed-challenge');
             lockIcon.textContent = '⏰';
-            statusTxt.textContent = 'Closed';
-            btn.textContent = 'Challenge ended';
+            statusTxt.textContent = 'Challenge Closed';
+            btn.textContent = 'Challenge Closed';
             btn.className = 'challenge-btn closed-btn';
             btn.removeAttribute('href');
             btn.setAttribute('aria-disabled', 'true');
